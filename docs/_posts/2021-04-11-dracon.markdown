@@ -1,0 +1,29 @@
+---
+layout: default
+title:  "Dracon"
+date: 2021-04-11
+categories: projects
+---
+# Dracon
+
+Dracon is an IntelliJ Plugin developed by [Jonathan](https://github.com/JonathanxD) which provides integration between [pijul](https://pijul.org) and [IntelliJ Platform](https://www.jetbrains.com/pt-br/idea/).
+
+## Installing
+
+Dracon is in an experimental state and there is no official release builds available, currently the only way to download or install Dracon is by cloning the [repo](https://nest.pijul.com/Jonathan/Dracon) and using one of the officially created experimental or nightly builds.
+
+## Installing Pijul
+
+Dracon does not Bundle Pijul binaries, you should download and install pijul by yourself, you could install pijul through [Rust Cargo](https://github.com/rust-lang/cargo) which also could be installed using [Rustup](https://rustup.rs). If you already have cargo installed, just run `cargo install pijul --version '~1.0.0-alpha'`.
+
+Windows builds are provided by [boringcactus](https://github.com/boringcactus/pijul-windows-builds/releases).
+
+## Installin Editor Server
+
+Dracon does some tricky hacks to integrate Pijul with IntelliJ, one of these tricks involves setting up a fake editor to allow users to edit representation produced by `pijul record` and `pijul push` in *IntelliJ Editor*, this feature requires [Editor Server](https://crates.io/crates/editor-server), which creates a HTTP Server to interface the *fake editor* with IntelliJ and Pijul. [Editor Server](https://crates.io/crates/editor-server) is not bundled with Dracon, the installation steps is very similar to installing pijul, if you already have [Rust Cargo](https://github.com/rust-lang/cargo), just run `cargo install editor-server`.
+
+Windows builds are officially provided by [JonathanxD](https://github.com/JonathanxD/editor-server/releases/latest).
+
+## Configuring Dracon paths
+
+Dracon auto-detect *Pijul* and *Editor Server* binaries, however you could manually change these binaries in IntelliJ.
